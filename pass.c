@@ -31,6 +31,7 @@ int main(){
 				strcpy(result,"instantly");
 				break;
 		}
+		//kalai
 	}
 	else if (length==8){
 		switch(x){
