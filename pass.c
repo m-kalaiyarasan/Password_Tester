@@ -1,12 +1,15 @@
 #include <stdlib.h>
 #include <string.h>
+#include<ctype.h>
 #include <stdio.h>
-int main(){
-	char str_inp[20],result[10];
+int check_char(const char *str, int *hasLowercase, int *hasUppercase, int *hasDigit, int *hasSymbol);
+void Test_Pass(char *password){
+	char str_inp[20],result[50];
 	int length;
-	printf("Enter your password : ");
-	scanf("%s",str_inp);
-	for(length=0;str_inp[length]!='\0';++length);
+
+	// printf("Enter your password : ");
+	// scanf("%s",str_inp);
+	for(length=0;password[length]!='\0';++length);
 	printf("Length of your password is %d\n",length);
 	int lower,upper,digit,symbol;
 	int x = check_char(str_inp,&lower,&upper,&digit,&symbol);
@@ -243,7 +246,7 @@ int main(){
 				break;
 		}
 	}
-	printf("This password brutforced %s",result);
+	printf("This password brutforced %s\n",result);
 		
 }
 int check_char(const char *str, int *hasLowercase, int *hasUppercase, int *hasDigit, int *hasSymbol) {
